@@ -1,0 +1,64 @@
+- root access to GPIO for any executable:
+
+cd devel/lib/robot_micro    # cd to the directory with your node
+sudo chown root:root my_node     # change ownship to root
+sudo chmod a+rx my_node          # set as executable by all
+sudo chmod u+s my_node           # set the setuid bit
+
+example:
+
+sudo chown root:root devel/lib/robot_micro/robot_twist_subscriber
+sudo chmod a+rx devel/lib/robot_micro/robot_twist_subscriber
+sudo chmod u+s devel/lib/robot_micro/robot_twist_subscriber
+
+- Allow any user to use joystick
+sudo chmod a+rw /dev/input/js0
+
+/dev/ttyAMA0
+
+- use piscope
+
+RP3 sudo pigpiod
+
+PC
+export PIGPIO_ADDR=192.168.0.201
+piscope
+
+
+- remove password with sudo
+edit:               sudo nano /etc/sudoers
+add to end file:    odroid ALL=(ALL) NOPASSWD: ALL
+
+- set GCC 5 for ubuntu 16.04
+export CC=/usr/bin/gcc-5
+export CXX=/usr/bin/g++-5
+
+-- Launch from PC
+cd ~/Documents/autonomous_bicycle/code
+source devel/setup.bash
+roslaunch autonomous_bicycle autonomous_bicycle.launch
+
+- Launch raspberry
+
+
+- Clean start up
+
+sudo killall -9 pigpiod # kill the daemon
+sudo rm /var/run/pigpio.pid
+
+- monitor RAM memory
+watch -n 5 free -m
+
+- Fix NTFS problem
+sudo ntfsfix /dev/mmcblk0p1
+
+- if gazebo does not run, kill all gzserver
+sudo killall gzserver gzclient
+
+-- You can change the I2C baudrate to 50KHz this way
+
+sudo modprobe -r i2c-bcm2708
+sudo modprobe i2c-bcm2708 baudrate=50000
+
+-- sytem log
+sudo nano /var/log/syslog

@@ -1,0 +1,16 @@
+<launch>
+    <env name="GAZEBO_MODEL_PATH" value="$(find autonomous_bicycle)/models"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+        <arg name="world_name" value="$(find autonomous_bicycle)/worlds/standard_bicycle.world"/>
+        <arg name="paused" value="true"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <node name="custom_rqt_perspective" pkg="rqt_gui" type="rqt_gui" required="false"
+          args="--perspective-file  $(find autonomous_bicycle)/config/rqt_default.perspective" />
+
+</launch>
