@@ -954,6 +954,56 @@
                 </physics>
             </joint>
 
+            <plugin name="gps_sim" filename="libhector_gazebo_ros_gps.so">
+                <referenceLatitude>49.424774</referenceLatitude>
+                <referenceLongitude>7.754394</referenceLongitude>
+
+                <frameId>main_frame</frameId>
+                <bodyName>main_frame</bodyName>
+
+                <alwaysOn>1</alwaysOn>
+                <updateRate>10.0</updateRate>
+
+                <topicName>fix</topicName>
+                <velocityTopicName>fix_velocity</velocityTopicName>
+                <drift>5.0 5.0 5.0</drift>
+                <gaussianNoise>0.1 0.1 0.1</gaussianNoise>
+                <velocityDrift>0 0 0</velocityDrift>
+                <velocityGaussianNoise>0.1 0.1 0.1</velocityGaussianNoise>
+            </plugin>
+
+            <plugin name="imu_main_frame_sim" filename="libhector_gazebo_ros_imu.so">
+                <alwaysOn>true</alwaysOn>
+                <updateRate>100.0</updateRate>
+                <bodyName>main_frame</bodyName>
+                <frameId>bikes_design__main_frame</frameId>
+                <topicName>/bicycle/imu_main_frame</topicName>
+                <rpyOffsets>0 0 0</rpyOffsets> <!-- deprecated -->
+                <gaussianNoise>0</gaussianNoise>  <!-- deprecated -->
+                <accelDrift>0.5 0.5 0.5</accelDrift>
+                <accelGaussianNoise>0.35 0.35 0.3</accelGaussianNoise>
+                <rateDrift>0.0 0.0 0.0</rateDrift>
+                <rateGaussianNoise>0.00 0.00 0.00</rateGaussianNoise>
+                <headingDrift>0.0</headingDrift>
+                <headingGaussianNoise>0.00</headingGaussianNoise>
+            </plugin>
+
+            <plugin name="imu_main_frame_sim" filename="libhector_gazebo_ros_imu.so">
+                <alwaysOn>true</alwaysOn>
+                <updateRate>100.0</updateRate>
+                <bodyName>handlebar</bodyName>
+                <frameId>bikes_design__handlebar</frameId>
+                <topicName>/bicycle/imu_handlebar</topicName>
+                <rpyOffsets>0 0 0</rpyOffsets> <!-- deprecated -->
+                <gaussianNoise>0</gaussianNoise>  <!-- deprecated -->
+                <accelDrift>0.5 0.5 0.5</accelDrift>
+                <accelGaussianNoise>0.35 0.35 0.3</accelGaussianNoise>
+                <rateDrift>0.0 0.0 0.0</rateDrift>
+                <rateGaussianNoise>0.00 0.00 0.00</rateGaussianNoise>
+                <headingDrift>0.0</headingDrift>
+                <headingGaussianNoise>0.00</headingGaussianNoise>
+            </plugin>
+
         </model>
     </world>
 </sdf>

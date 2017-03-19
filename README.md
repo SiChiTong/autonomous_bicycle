@@ -3,12 +3,18 @@
 ROS package for localization, pose estimation and autonomous navigation algorithms of autonomous bikes.
 
 Current available features:
-- Simulation of bicycle in gazebo
+- Simulation of bicycle in gazebo and synchronized with RVIZ (model + tf)
+
+Install dependencies:
+
+    sudo apt-get install git ros-kinetic-hector-gazebo-plugins 
 
 How to test it?
 
     cd path_ros_workspace/src/
     git clone https://github.com/francisc0garcia/autonomous_bicycle
+    git clone https://github.com/gareth-cross/rviz_satellite
+    git clone https://github.com/ccny-ros-pkg/imu_tools
     cd .. 
     catkin_make
     source devel/setup.bash
