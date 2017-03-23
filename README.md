@@ -9,7 +9,6 @@ A short video:
 
 [![Autonomous bicycle](http://img.youtube.com/vi/t7ZZPeML2Fw/0.jpg)](https://www.youtube.com/watch?v=t7ZZPeML2Fw "Autonomous bicycle")
 
-
 Install dependencies:
 
     sudo apt-get install git ros-kinetic-hector-gazebo-plugins 
@@ -20,6 +19,7 @@ How to test it?
     git clone https://github.com/francisc0garcia/autonomous_bicycle
     git clone https://github.com/gareth-cross/rviz_satellite
     git clone https://github.com/ccny-ros-pkg/imu_tools
+    git clone https://github.com/andreasBihlmaier/pysdf
     cd .. 
     catkin_make
     source devel/setup.bash
