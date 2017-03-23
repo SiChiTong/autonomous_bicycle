@@ -5,6 +5,8 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /TF1/Frames1
+        - /Axes1
       Splitter Ratio: 0.455149502
     Tree Height: 832
   - Class: rviz/Selection
@@ -52,7 +54,14 @@ Visualization Manager:
       Marker Topic: /model_marker
       Name: Marker
       Namespaces:
-        {}
+        bikes_design__handlebar__visual: true
+        bikes_design__link_handle__visual: true
+        bikes_design__link_wheel__visual: true
+        bikes_design__main_frame__visual: true
+        bikes_design__saddle__visual: true
+        bikes_design__wheel_front__visual: true
+        bikes_design__wheel_rear__visual: true
+        ground_plane__link__visual: true
       Queue Size: 10
       Value: true
     - Class: rviz/TF
@@ -60,13 +69,47 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        bikes_design__handlebar:
+          Value: true
+        bikes_design__link_handle:
+          Value: true
+        bikes_design__link_wheel:
+          Value: false
+        bikes_design__main_frame:
+          Value: true
+        bikes_design__saddle:
+          Value: false
+        bikes_design__wheel_front:
+          Value: false
+        bikes_design__wheel_rear:
+          Value: false
+        gazebo_world:
+          Value: true
+        ground_plane__link:
+          Value: true
+        world:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        {}
+        world:
+          gazebo_world:
+            bikes_design__link_wheel:
+              bikes_design__wheel_front:
+                {}
+            bikes_design__main_frame:
+              bikes_design__link_handle:
+                bikes_design__handlebar:
+                  {}
+              bikes_design__saddle:
+                {}
+              bikes_design__wheel_rear:
+                {}
+            ground_plane__link:
+              {}
       Update Interval: 0
       Value: true
     - Acceleration properties:
@@ -113,6 +156,13 @@ Visualization Manager:
       Topic: /bicycle/imu_handlebar
       Unreliable: false
       Value: true
+    - Class: rviz/Axes
+      Enabled: true
+      Length: 0.5
+      Name: Axes
+      Radius: 0.0500000007
+      Reference Frame: <Fixed Frame>
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -137,7 +187,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 8.7692852
+      Distance: 7.60584736
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
