@@ -30,7 +30,7 @@
 
     <node name="gazebo2rviz" pkg="autonomous_bicycle" type="gazebo2rviz.py"  output="screen">
         <param name="ignore_submodels_of" value="" type="str" />
-        <param name="rate" value="10" />
+        <param name="rate" value="20" />
     </node>
 
 </launch>

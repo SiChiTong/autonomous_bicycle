@@ -6,8 +6,8 @@ Panels:
       Expanded:
         - /Global Options1
         - /TF1/Frames1
-        - /Axes1
-      Splitter Ratio: 0.455149502
+        - /Imu_21/Box properties1
+      Splitter Ratio: 0.543189347
     Tree Height: 832
   - Class: rviz/Selection
     Name: Selection
@@ -55,7 +55,12 @@ Visualization Manager:
       Name: Marker
       Namespaces:
         bikes_design__handlebar__visual: true
+        bikes_design__link_gps_front__visual: true
+        bikes_design__link_gps_rear__visual: true
         bikes_design__link_handle__visual: true
+        bikes_design__link_imu_1__visual: true
+        bikes_design__link_imu_2__visual: true
+        bikes_design__link_imu_steering__visual: true
         bikes_design__link_wheel__visual: true
         bikes_design__main_frame__visual: true
         bikes_design__saddle__visual: true
@@ -71,18 +76,28 @@ Visualization Manager:
         All Enabled: false
         bikes_design__handlebar:
           Value: true
+        bikes_design__link_gps_front:
+          Value: true
+        bikes_design__link_gps_rear:
+          Value: true
         bikes_design__link_handle:
           Value: true
+        bikes_design__link_imu_1:
+          Value: true
+        bikes_design__link_imu_2:
+          Value: true
+        bikes_design__link_imu_steering:
+          Value: true
         bikes_design__link_wheel:
-          Value: false
+          Value: true
         bikes_design__main_frame:
           Value: true
         bikes_design__saddle:
-          Value: false
+          Value: true
         bikes_design__wheel_front:
-          Value: false
+          Value: true
         bikes_design__wheel_rear:
-          Value: false
+          Value: true
         gazebo_world:
           Value: true
         ground_plane__link:
@@ -97,13 +112,23 @@ Visualization Manager:
       Tree:
         world:
           gazebo_world:
-            bikes_design__link_wheel:
-              bikes_design__wheel_front:
-                {}
             bikes_design__main_frame:
+              bikes_design__link_gps_front:
+                {}
+              bikes_design__link_gps_rear:
+                {}
               bikes_design__link_handle:
                 bikes_design__handlebar:
                   {}
+                bikes_design__link_imu_steering:
+                  {}
+                bikes_design__link_wheel:
+                  bikes_design__wheel_front:
+                    {}
+              bikes_design__link_imu_1:
+                {}
+              bikes_design__link_imu_2:
+                {}
               bikes_design__saddle:
                 {}
               bikes_design__wheel_rear:
@@ -125,13 +150,13 @@ Visualization Manager:
         Box alpha: 1
         Box color: 255; 0; 0
         Enable box: true
-        x_scale: 0.100000001
-        y_scale: 0.100000001
-        z_scale: 0.100000001
+        x_scale: 0.0500000007
+        y_scale: 0.0500000007
+        z_scale: 0.0500000007
       Class: rviz_imu_plugin/Imu
       Enabled: true
-      Name: Imu_main_frame
-      Topic: /bicycle/imu_main_frame
+      Name: Imu_1
+      Topic: /bicycle/imu_1
       Unreliable: false
       Value: true
     - Acceleration properties:
@@ -147,13 +172,35 @@ Visualization Manager:
         Box alpha: 1
         Box color: 255; 0; 0
         Enable box: true
-        x_scale: 0.100000001
-        y_scale: 0.100000001
-        z_scale: 0.100000001
+        x_scale: 0.0500000007
+        y_scale: 0.0500000007
+        z_scale: 0.0500000007
       Class: rviz_imu_plugin/Imu
       Enabled: true
-      Name: Imu_handlebar
-      Topic: /bicycle/imu_handlebar
+      Name: Imu_2
+      Topic: /bicycle/imu_2
+      Unreliable: false
+      Value: true
+    - Acceleration properties:
+        Acc. vector alpha: 1
+        Acc. vector color: 255; 0; 0
+        Acc. vector scale: 1
+        Derotate acceleration: true
+        Enable acceleration: false
+      Axes properties:
+        Axes scale: 1
+        Enable axes: true
+      Box properties:
+        Box alpha: 1
+        Box color: 255; 0; 0
+        Enable box: true
+        x_scale: 0.0500000007
+        y_scale: 0.0500000007
+        z_scale: 0.0500000007
+      Class: rviz_imu_plugin/Imu
+      Enabled: true
+      Name: Imu_steering
+      Topic: /bicycle/imu_steering
       Unreliable: false
       Value: true
     - Class: rviz/Axes
@@ -167,7 +214,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Fixed Frame: gazebo_world
-    Frame Rate: 30
+    Frame Rate: 20
   Name: root
   Tools:
     - Class: rviz/Interact
@@ -187,24 +234,24 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 7.60584736
+      Distance: 5.72155905
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.28344738
-        Y: 1.82425499
-        Z: -0.753521085
+        X: 1.18856859
+        Y: 0.269746155
+        Z: -0.897804141
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 1.30979717
+      Pitch: 1.22479582
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.77538109
+      Yaw: 3.94037032
     Saved: ~
 Window Geometry:
   Displays:
