@@ -5,7 +5,7 @@
       "keys": {
         "running-plugins": {
           "type": "repr", 
-          "repr": "{u'rqt_topic/TopicPlugin': [1]}"
+          "repr": "{u'MultiplotPlugin': [1], u'rqt_reconfigure/Param': [1], u'rqt_topic/TopicPlugin': [1]}"
         }
       }, 
       "groups": {
@@ -16,8 +16,8 @@
               "keys": {
                 "tree_widget_header_state": {
                   "type": "repr(QByteArray.hex)", 
-                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff0000000000000001000000000000000001000000000000000000000000000000000000046b000000050101000100000000000000000500000070ffffffff0000008100000003000000050000013300000001000000030000013a00000001000000030000007e00000001000000030000004400000001000000030000013c0000000100000003000003e800')", 
-                  "pretty-print": "                              p         3     :     ~     D     <      "
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff000000000000000100000000000000000100000000000000000000000000000000000004fd000000050101000100000000000000000500000070ffffffff000000810000000300000005000001c900000001000000030000016b00000001000000030000007e0000000100000003000000440000000100000003000001070000000100000003000003e800')", 
+                  "pretty-print": "                              p               k     ~     D            "
                 }
               }, 
               "groups": {}
@@ -40,6 +40,87 @@
               "groups": {}
             }
           }
+        }, 
+        "plugin__rqt_reconfigure__Param__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget___plugincontainer_top_widget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'Dynamic Reconfigure'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {
+                "splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff0000000100000002000000bc0000006401ffffffff010000000100')", 
+                  "pretty-print": "         d     "
+                }, 
+                "_splitter": {
+                  "type": "repr(QByteArray.hex)", 
+                  "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000001000000020000012c000000000100000009010000000200')", 
+                  "pretty-print": "       ,       "
+                }
+              }, 
+              "groups": {}
+            }
+          }
+        }, 
+        "plugin__MultiplotPlugin__1": {
+          "keys": {}, 
+          "groups": {
+            "dock_widget__MultiplotWidget": {
+              "keys": {
+                "dockable": {
+                  "type": "repr", 
+                  "repr": "True"
+                }, 
+                "parent": {
+                  "type": "repr", 
+                  "repr": "None"
+                }, 
+                "dock_widget_title": {
+                  "type": "repr", 
+                  "repr": "u'Multiplot - [file:///home/pach0/Documents/autonomous_bicycle/code/src/autonomous_bicycle/config/rqt_multiplot.xml]'"
+                }
+              }, 
+              "groups": {}
+            }, 
+            "plugin": {
+              "keys": {}, 
+              "groups": {
+                "history": {
+                  "keys": {
+                    "max_length": {
+                      "type": "repr", 
+                      "repr": "10"
+                    }, 
+                    "config_1": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/pach0/rqt_multiplot.xml'"
+                    }, 
+                    "config_0": {
+                      "type": "repr", 
+                      "repr": "u'file:///home/pach0/Documents/autonomous_bicycle/code/src/autonomous_bicycle/config/rqt_multiplot.xml'"
+                    }
+                  }, 
+                  "groups": {}
+                }
+              }
+            }
+          }
         }
       }
     }, 
@@ -47,13 +128,13 @@
       "keys": {
         "geometry": {
           "type": "repr(QByteArray.hex)", 
-          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb000200000000006400000064000004e4000002d80000006400000080000004e4000002d800000001000000000690')", 
-          "pretty-print": "     d d     d           "
+          "repr(QByteArray.hex)": "QtCore.QByteArray('01d9d0cb0002000000000064000000640000063b000003bf00000064000000800000063b000003bf00000001000000000690')", 
+          "pretty-print": "     d d ;   d   ;       "
         }, 
         "state": {
           "type": "repr(QByteArray.hex)", 
-          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd00000001000000030000048100000241fc0100000001fb0000004c007200710074005f0074006f007000690063005f005f0054006f0070006900630050006c007500670069006e005f005f0031005f005f0054006f007000690063005700690064006700650074010000000000000481000000e300ffffff0000047f0000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')", 
-          "pretty-print": "                 Lrqt_topic__TopicPlugin__1__TopicWidget                            6MinimizedDockWidgetsToolbar        "
+          "repr(QByteArray.hex)": "QtCore.QByteArray('000000ff00000000fd0000000100000003000005d800000328fc0100000001fc00000000000005d80000048f00fffffffc0200000002fc0000000000000211000001220100001ffa000000000200000002fb00000046004d0075006c007400690070006c006f00740050006c007500670069006e005f005f0031005f005f004d0075006c007400690070006c006f00740057006900640067006500740100000000ffffffff0000010200fffffffb0000004c007200710074005f0074006f007000690063005f005f0054006f0070006900630050006c007500670069006e005f005f0031005f005f0054006f0070006900630057006900640067006500740100000000000002440000007600fffffffb0000006c007200710074005f007200650063006f006e006600690067007500720065005f005f0050006100720061006d005f005f0031005f005f005f0070006c007500670069006e0063006f006e007400610069006e00650072005f0074006f0070005f0077006900640067006500740100000217000001110000011100ffffff000005d80000000000000004000000040000000800000008fc00000001000000030000000100000036004d0069006e0069006d0069007a006500640044006f0063006b00570069006400670065007400730054006f006f006c0062006100720000000000ffffffff0000000000000000')", 
+          "pretty-print": "                                          FMultiplotPlugin__1__MultiplotWidget          Lrqt_topic__TopicPlugin__1__TopicWidget          lrqt_reconfigure__Param__1___plugincontainer_top_widget                            6MinimizedDockWidgetsToolbar        "
         }
       }, 
       "groups": {

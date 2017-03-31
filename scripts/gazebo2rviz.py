@@ -29,7 +29,7 @@ class Gazebo2Rviz:
         self.enable_publisher_marker = False
         self.enable_publisher_tf = False
 
-        self.markerPub = rospy.Publisher('/model_marker', Marker, queue_size=1)
+        self.markerPub = rospy.Publisher('/model_marker', Marker, queue_size=10)
         self.modelStatesSub = rospy.Subscriber('gazebo/model_states', ModelStates, self.on_model_states_msg, queue_size=1)
         self.linkStatesSub = rospy.Subscriber('gazebo/link_states', LinkStates, self.on_link_states_msg, queue_size=1)
         rate_sleep = rospy.Rate(self.rate)
@@ -37,9 +37,8 @@ class Gazebo2Rviz:
         # Main while loop
         while not rospy.is_shutdown():
             if self.enable_publisher_marker and self.enable_publisher_tf:
-                self.publish_marker()
                 self.publish_tf()
-
+                self.publish_marker()
 
             rate_sleep.sleep()
 
@@ -65,7 +64,7 @@ class Gazebo2Rviz:
         if 'model_name' in kwargs and 'instance_name' in kwargs:
             full_linkinstancename = full_linkinstancename.replace(kwargs['model_name'], kwargs['instance_name'], 1)
 
-        marker_msgs = link2marker_msg(link, full_linkinstancename, False, rospy.Duration(2 * self.updatePeriod))
+        marker_msgs = link2marker_msg(link, full_linkinstancename, False, rospy.Duration(10 * self.updatePeriod))
         if len(marker_msgs) > 0:
             for marker_msg in marker_msgs:
                 self.markerPub.publish(marker_msg)
@@ -101,6 +100,7 @@ class Gazebo2Rviz:
             link_name_in_model = link_name.replace(modelinstance_name + '::', '')
             if model:
                 link = model.get_link(link_name_in_model)
+
                 if link.tree_parent_joint:
                     parent_link = link.tree_parent_joint.tree_parent_link
                     parent_link_name = parent_link.get_full_name()

@@ -6,7 +6,7 @@
     <!-- Launch Gazebo simulator -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch" >
         <arg name="world_name" value="$(find autonomous_bicycle)/worlds/standard_bicycle.world"/>
-        <arg name="paused" value="true"/>
+        <arg name="paused" value="false"/>
         <arg name="use_sim_time" value="false"/>
         <arg name="gui" value="true"/>
         <arg name="headless" value="false"/>
@@ -15,6 +15,26 @@
         <arg name="respawn_gazebo" default="false"/>
         <arg name="verbose" default="false"/>
     </include>
+
+    <!-- interaction with simulated bicycle -->
+    <node pkg="autonomous_bicycle" type="bicycle_interaction.py" name="bicycle_interaction" required="false" >
+        <param name="rate" type="int" value="10" />
+        <param name="wheel_radius" type="double" value="0.335" />
+    </node>
+
+    <!-- convert IMU to angles for visualization -->
+    <node pkg="autonomous_bicycle" type="reference_imu_to_angle.py" name="reference_imu_to_angle" required="false" >
+        <param name="rate" type="int" value="100" />
+        <param name="imu_name" type="string" value="imu_steering" />
+        <param name="topic_name_angle" type="string" value="/bicycle/imu_steering" />
+        <param name="topic_name_reference" type="string" value="/bicycle/imu_1" />
+    </node>
+
+    <node pkg="autonomous_bicycle" type="imu_to_angles.py" name="imu_to_angles_lean" required="false" >
+        <param name="rate" type="int" value="100" />
+        <param name="imu_name" type="string" value="imu_lean" />
+        <param name="topic_name" type="string" value="/bicycle/imu_1" />
+    </node>
 
     <!-- Launch RQT and RVIZ -->
     <node name="custom_rqt_perspective" pkg="rqt_gui" type="rqt_gui" required="false"
