@@ -1,0 +1,23 @@
+<launch>
+
+    <!-- Publish imu 1 data -->
+    <node pkg="autonomous_bicycle" type="sensor_imu_publisher.py" name="sensor_imu_publisher" required="true" >
+        <param name="rate" type="int" value="100" />
+
+        <rosparam param="publish_transform">True</rosparam>
+        <rosparam param="static_transform">[0.5, 0.5, 0.1, 0.0, 0.0, 0.0]</rosparam>
+
+        <param name="serial_port" type="string" value="/dev/ttyUSB0" />
+        <param name="topic_name" type="string" value="/imu" />
+        <param name="fixed_frame" type="string" value="world" />
+        <param name="frame_name" type="string" value="imu" />
+    </node>
+
+    <!-- Launch RQT and RVIZ -->
+    <node name="custom_rqt_perspective" pkg="rqt_gui" type="rqt_gui" required="false"
+          args="--perspective-file  $(find autonomous_bicycle)/config/rqt_sensor_init.perspective" />
+
+    <node name="rviz" pkg="rviz" type="rviz" required="false"
+          args="-d $(find autonomous_bicycle)/config/rviz_sensor_init.rviz"     />
+
+</launch>
