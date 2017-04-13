@@ -3,7 +3,7 @@
     <table>
         <background_color>#ffffff</background_color>
         <foreground_color>#000000</foreground_color>
-        <link_cursor>false</link_cursor>
+        <link_cursor>true</link_cursor>
         <link_scale>false</link_scale>
         <plots>
             <row_0>
@@ -58,7 +58,7 @@
                             </color>
                             <data>
                                 <circular_buffer_capacity>1000</circular_buffer_capacity>
-                                <time_frame_length>20</time_frame_length>
+                                <time_frame_length>40</time_frame_length>
                                 <type>3</type>
                             </data>
                             <style>
@@ -132,7 +132,7 @@
                             </color>
                             <data>
                                 <circular_buffer_capacity>1000</circular_buffer_capacity>
-                                <time_frame_length>20</time_frame_length>
+                                <time_frame_length>40</time_frame_length>
                                 <type>3</type>
                             </data>
                             <style>
@@ -183,7 +183,7 @@
                             </color>
                             <data>
                                 <circular_buffer_capacity>1000</circular_buffer_capacity>
-                                <time_frame_length>20</time_frame_length>
+                                <time_frame_length>40</time_frame_length>
                                 <type>3</type>
                             </data>
                             <style>
